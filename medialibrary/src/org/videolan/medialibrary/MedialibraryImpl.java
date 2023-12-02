@@ -287,10 +287,10 @@ public Album[] getAlbums(boolean includeMissing) {
     return getAlbums(Medialibrary.SORT_DEFAULT, false, includeMissing);
 }
 
-    @WorkerThread
-    public Album[] getAlbums(int sort, boolean desc, boolean includeMissing) {
-        return mIsInitiated ? nativeGetAlbums(sort, desc, includeMissing) : new Album[0];
-    }
+@WorkerThread
+public Album[] getAlbums(int sort, boolean desc, boolean includeMissing) {
+    return mIsInitiated ? nativeGetAlbums(sort, desc, includeMissing) : new Album[0];
+}
 
     @NonNull
     @WorkerThread
