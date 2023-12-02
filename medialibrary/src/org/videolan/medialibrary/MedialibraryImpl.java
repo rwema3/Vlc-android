@@ -326,9 +326,9 @@ public Artist[] getPagedArtists(boolean all, int sort, boolean desc, boolean inc
     return mIsInitiated ? nativeGetPagedArtists(all, sort, desc, includeMissing, nbItems, offset) : new Artist[0];
 }
 
-    public int getArtistsCount(boolean all) {
-        return mIsInitiated ? nativeGetArtistsCount(all) : 0;
-    }
+public int getArtistsCount(boolean all) {
+    return mIsInitiated ? nativeGetArtistsCount(all) : 0;
+}
 
     public int getArtistsCount(String query) {
         return mIsInitiated ? nativeGetArtistsSearchCount(query) : 0;
