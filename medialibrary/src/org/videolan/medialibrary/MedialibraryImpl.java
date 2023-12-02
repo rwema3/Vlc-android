@@ -292,11 +292,11 @@ public Album[] getAlbums(int sort, boolean desc, boolean includeMissing) {
     return mIsInitiated ? nativeGetAlbums(sort, desc, includeMissing) : new Album[0];
 }
 
-    @NonNull
-    @WorkerThread
-    public Album[] getPagedAlbums(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
-        return mIsInitiated ? nativeGetPagedAlbums(sort, desc, includeMissing, nbItems, offset) : new Album[0];
-    }
+@NonNull
+@WorkerThread
+public Album[] getPagedAlbums(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
+    return mIsInitiated ? nativeGetPagedAlbums(sort, desc, includeMissing, nbItems, offset) : new Album[0];
+}
 
     public int getAlbumsCount() {
         return mIsInitiated ? nativeGetAlbumsCount() : 0;
