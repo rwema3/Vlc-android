@@ -337,16 +337,15 @@ public int getArtistsCount(String query) {
 public Artist getArtist(long artistId) {
     return mIsInitiated ? nativeGetArtist(artistId) : null;
 }
+@WorkerThread
+public Genre[] getGenres(boolean includeMissing) {
+    return getGenres(Medialibrary.SORT_DEFAULT, false, includeMissing);
+}
 
-    @WorkerThread
-    public Genre[] getGenres(boolean includeMissing) {
-        return getGenres(Medialibrary.SORT_DEFAULT, false, includeMissing);
-    }
-
-    @WorkerThread
-    public Genre[] getGenres(int sort, boolean desc, boolean includeMissing) {
-        return mIsInitiated ? nativeGetGenres(sort, desc, includeMissing) : new Genre[0];
-    }
+@WorkerThread
+public Genre[] getGenres(int sort, boolean desc, boolean includeMissing) {
+    return mIsInitiated ? nativeGetGenres(sort, desc, includeMissing) : new Genre[0];
+}
 
     @NonNull
     @WorkerThread
