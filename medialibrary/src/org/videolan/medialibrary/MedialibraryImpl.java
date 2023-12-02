@@ -266,11 +266,11 @@ public VideoGroup createVideoGroup(String name) {
     return (mIsInitiated && !TextUtils.isEmpty(name)) ? nativeCreateGroupByName(name) : null;
 }
 
-    @Override
-    @WorkerThread
-    public VideoGroup createVideoGroup(long[] ids) {
-        return mIsInitiated && (ids.length != 0) ? nativeCreateGroup(ids) : null;
-    }
+@Override
+@WorkerThread
+public VideoGroup createVideoGroup(long[] ids) {
+    return (mIsInitiated && ids.length != 0) ? nativeCreateGroup(ids) : null;
+}
 
     @Override
     public boolean regroupAll() {
