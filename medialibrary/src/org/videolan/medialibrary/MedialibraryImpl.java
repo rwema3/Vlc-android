@@ -260,11 +260,11 @@ public void setVideoGroupsPrefixLength(int length) {
 }
 
 
-    @Override
-    @WorkerThread
-    public VideoGroup createVideoGroup(String name) {
-        return mIsInitiated && !TextUtils.isEmpty(name) ? nativeCreateGroupByName(name) : null;
-    }
+@Override
+@WorkerThread
+public VideoGroup createVideoGroup(String name) {
+    return (mIsInitiated && !TextUtils.isEmpty(name)) ? nativeCreateGroupByName(name) : null;
+}
 
     @Override
     @WorkerThread
