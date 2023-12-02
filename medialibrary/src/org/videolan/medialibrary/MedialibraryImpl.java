@@ -311,15 +311,15 @@ public Album getAlbum(long albumId) {
     return mIsInitiated ? nativeGetAlbum(albumId) : null;
 }
 
-    @WorkerThread
-    public Artist[] getArtists(boolean all, boolean includeMissing) {
-        return getArtists(all, Medialibrary.SORT_DEFAULT, false, includeMissing);
-    }
+@WorkerThread
+public Artist[] getArtists(boolean all, boolean includeMissing) {
+    return getArtists(all, Medialibrary.SORT_DEFAULT, false, includeMissing);
+}
 
-    @WorkerThread
-    public Artist[] getArtists(boolean all, int sort, boolean desc, boolean includeMissing) {
-        return mIsInitiated ? nativeGetArtists(all, sort, desc, includeMissing) : new Artist[0];
-    }
+@WorkerThread
+public Artist[] getArtists(boolean all, int sort, boolean desc, boolean includeMissing) {
+    return mIsInitiated ? nativeGetArtists(all, sort, desc, includeMissing) : new Artist[0];
+}
 
     @WorkerThread
     public Artist[] getPagedArtists(boolean all, int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
