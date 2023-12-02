@@ -235,11 +235,15 @@ public class MedialibraryImpl extends Medialibrary {
         return mIsInitiated ? nativeGetAudioCount() : 0;
     }
 
-    @Override
-    @WorkerThread
-    public VideoGroup[] getVideoGroups(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
-        return mIsInitiated ? nativeGetVideoGroups(sort, desc, includeMissing, nbItems, offset) : new VideoGroup[0];
+@Override
+@WorkerThread
+public VideoGroup[] getVideoGroups(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
+    if (mIsInitiated) {
+        return nativeGetVideoGroups(sort, desc, includeMissing, nbItems, offset);
+    } else {
+        return new VideoGroup[0];
     }
+}
 
     @Override
     @WorkerThread
