@@ -321,10 +321,10 @@ public Artist[] getArtists(boolean all, int sort, boolean desc, boolean includeM
     return mIsInitiated ? nativeGetArtists(all, sort, desc, includeMissing) : new Artist[0];
 }
 
-    @WorkerThread
-    public Artist[] getPagedArtists(boolean all, int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
-        return mIsInitiated ? nativeGetPagedArtists(all, sort, desc, includeMissing, nbItems, offset) : new Artist[0];
-    }
+@WorkerThread
+public Artist[] getPagedArtists(boolean all, int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
+    return mIsInitiated ? nativeGetPagedArtists(all, sort, desc, includeMissing, nbItems, offset) : new Artist[0];
+}
 
     public int getArtistsCount(boolean all) {
         return mIsInitiated ? nativeGetArtistsCount(all) : 0;
