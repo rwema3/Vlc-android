@@ -272,10 +272,10 @@ public VideoGroup createVideoGroup(long[] ids) {
     return (mIsInitiated && ids.length != 0) ? nativeCreateGroup(ids) : null;
 }
 
-    @Override
-    public boolean regroupAll() {
-        return mIsInitiated && nativeRegroupAll();
-    }
+@Override
+public boolean regroupAll() {
+    return mIsInitiated && nativeRegroupAll();
+}
 
 
     public boolean regroup(long mediaId) {
