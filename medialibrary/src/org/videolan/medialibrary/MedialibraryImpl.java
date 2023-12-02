@@ -278,15 +278,14 @@ public boolean regroupAll() {
 }
 
 
-    public boolean regroup(long mediaId) {
-        return mIsInitiated && mediaId > 0 && nativeRegroup(mediaId);
-    }
+public boolean regroup(long mediaId) {
+    return mIsInitiated && mediaId > 0 && nativeRegroup(mediaId);
+}
 
-
-    @WorkerThread
-    public Album[] getAlbums(boolean includeMissing) {
-        return getAlbums(Medialibrary.SORT_DEFAULT, false, includeMissing);
-    }
+@WorkerThread
+public Album[] getAlbums(boolean includeMissing) {
+    return getAlbums(Medialibrary.SORT_DEFAULT, false, includeMissing);
+}
 
     @WorkerThread
     public Album[] getAlbums(int sort, boolean desc, boolean includeMissing) {
