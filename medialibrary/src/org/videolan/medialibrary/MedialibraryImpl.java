@@ -347,15 +347,15 @@ public Genre[] getGenres(int sort, boolean desc, boolean includeMissing) {
     return mIsInitiated ? nativeGetGenres(sort, desc, includeMissing) : new Genre[0];
 }
 
-    @NonNull
-    @WorkerThread
-    public Genre[] getPagedGenres(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
-        return mIsInitiated ? nativeGetPagedGenres(sort, desc, includeMissing, nbItems, offset) : new Genre[0];
-    }
+@NonNull
+@WorkerThread
+public Genre[] getPagedGenres(int sort, boolean desc, boolean includeMissing, int nbItems, int offset) {
+    return mIsInitiated ? nativeGetPagedGenres(sort, desc, includeMissing, nbItems, offset) : new Genre[0];
+}
 
-    public int getGenresCount() {
-        return mIsInitiated ? nativeGetGenresCount() : 0;
-    }
+public int getGenresCount() {
+    return mIsInitiated ? nativeGetGenresCount() : 0;
+}
 
     public int getGenresCount(String query) {
         return mIsInitiated ? nativeGetGenreSearchCount(query) : 0;
