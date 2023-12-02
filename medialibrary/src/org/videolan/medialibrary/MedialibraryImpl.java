@@ -330,13 +330,13 @@ public int getArtistsCount(boolean all) {
     return mIsInitiated ? nativeGetArtistsCount(all) : 0;
 }
 
-    public int getArtistsCount(String query) {
-        return mIsInitiated ? nativeGetArtistsSearchCount(query) : 0;
-    }
+public int getArtistsCount(String query) {
+    return mIsInitiated ? nativeGetArtistsSearchCount(query) : 0;
+}
 
-    public Artist getArtist(long artistId) {
-        return mIsInitiated ? nativeGetArtist(artistId) : null;
-    }
+public Artist getArtist(long artistId) {
+    return mIsInitiated ? nativeGetArtist(artistId) : null;
+}
 
     @WorkerThread
     public Genre[] getGenres(boolean includeMissing) {
