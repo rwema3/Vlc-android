@@ -302,14 +302,14 @@ public int getAlbumsCount() {
     return mIsInitiated ? nativeGetAlbumsCount() : 0;
 }
 
-    public int getAlbumsCount(String query) {
-        return mIsInitiated ? nativeGetAlbumSearchCount(query) : 0;
-    }
+public int getAlbumsCount(String query) {
+    return mIsInitiated ? nativeGetAlbumSearchCount(query) : 0;
+}
 
-    @WorkerThread
-    public Album getAlbum(long albumId) {
-        return mIsInitiated ? nativeGetAlbum(albumId) : null;
-    }
+@WorkerThread
+public Album getAlbum(long albumId) {
+    return mIsInitiated ? nativeGetAlbum(albumId) : null;
+}
 
     @WorkerThread
     public Artist[] getArtists(boolean all, boolean includeMissing) {
