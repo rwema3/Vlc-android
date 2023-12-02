@@ -245,17 +245,20 @@ public VideoGroup[] getVideoGroups(int sort, boolean desc, boolean includeMissin
     }
 }
 
-    @Override
-    @WorkerThread
-    public int getVideoGroupsCount(@Nullable String query) {
-        return mIsInitiated ? nativeGetVideoGroupsCount(query) : 0;
-    }
+  @Override
+@WorkerThread
+public int getVideoGroupsCount(@Nullable String query) {
+    return mIsInitiated ? nativeGetVideoGroupsCount(query) : 0;
+}
 
-    @Override
-    @WorkerThread
-    public void setVideoGroupsPrefixLength(int lenght) {
-        if (mIsInitiated) nativeSetVideoGroupsPrefixLength(lenght);
+ @Override
+@WorkerThread
+public void setVideoGroupsPrefixLength(int length) {
+    if (mIsInitiated) {
+        nativeSetVideoGroupsPrefixLength(length);
     }
+}
+
 
     @Override
     @WorkerThread
